@@ -1,17 +1,26 @@
+
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>{{ message }}</h1>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // HelloWorld
+  },
+  data() {
+    return {
+      message: ''
+    }
+  },
+  mounted() {
+    const result = window.myLibrary.add(5, 3);
+    this.message = `Result of add(5, 3): ${result}`;
   }
 }
 </script>
